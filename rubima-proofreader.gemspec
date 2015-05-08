@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rubima/lint/version'
+require 'rubima_proofreader/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "rubima-lint"
-  spec.version       = Rubima::Lint::VERSION
+  spec.name          = "rubima-proofreader"
+  spec.version       = RubimaProofreader::VERSION
   spec.authors       = ["miyohide"]
   spec.email         = ["miyohide@gmail.com"]
 
   spec.summary       = %q{Tools that confirm the rubima editorial policy.}
   spec.description   = %q{Tools that confirm the rubima editorial policy.}
-  spec.homepage      = "http://github.com/miyohide/rubima-lint"
+  spec.homepage      = "http://github.com/miyohide/rubima-proofreader"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
