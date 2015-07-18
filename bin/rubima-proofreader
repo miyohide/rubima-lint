@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+$LOAD_PATH.unshift(File.dirname(File.realpath(__FILE__)) + '/../lib')
+require "rubima_proofreader"
+
+OPTS = {}
+filename = ""
+opt = OptionParser.new
+
+opt.on("-a", "--auto-correct") { |v| OPTS[:a] = v }
+opt.on("-f VAL", "--file-name=VAL") { |v| filename = v }
+
+opt.parse!(ARGV)
+
+RubimaProofreader::Proofread.new(filename, OPTS).run
+
