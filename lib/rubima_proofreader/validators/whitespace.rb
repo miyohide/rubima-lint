@@ -1,3 +1,5 @@
+require "fileutils"
+
 module RubimaProofreader
   module Validators
     NOT_ASCII  = '[^[:ascii:]]'     # 非ASCII
@@ -43,7 +45,7 @@ module RubimaProofreader
 
       def run
         if @options[:a]
-          validate_and_auto-correct
+          validate_and_auto_correct
         else
           validate
         end
@@ -57,16 +59,16 @@ module RubimaProofreader
         end
       end
 
-      def validate_and_auto-correct
+      def validate_and_auto_correct
         file_backup
 
-        File.open(@filename, "w") do { |file|
+        File.open(@filename, "w") { |file|
           file_read(@backup_filename).each_with_index do |line, line_no|
             if line.gsub!(MISSING_BLANK) { " " }
               @warning_lines[line_no + 1] = line
             end
+            file.print(line)
           end
-          file.print(line)
         }
       end
 
