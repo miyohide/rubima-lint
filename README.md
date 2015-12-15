@@ -1,5 +1,7 @@
 # RubimaProofreader
 
+[![Build Status](https://travis-ci.org/miyohide/rubima-lint.svg)](https://travis-ci.org/miyohide/rubima-lint)
+
 るびま編集において記事が校正ルールに当てはまっているかをチェックします。また、
 `-a`オプションをつけると校正ルールに準拠するように修正します。
 
